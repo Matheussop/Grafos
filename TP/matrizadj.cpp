@@ -125,6 +125,6 @@ int main(){
         qArestas = 0;
         grafo.dfs(0);
         grafo.zerarMatriz();
-    }
+    }//fim do for
     return 0;
 }
