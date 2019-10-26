@@ -128,3 +128,7 @@ int main(){
     }//fim do for
     return 0;
 }
+
+//TODO resolver isso auqi
+//FIXME seila  
+//LEMBRETE teste
