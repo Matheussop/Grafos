@@ -109,17 +109,17 @@ bool Grafo::inserirNovasArestas(int qArestas){
     bool resp = false;
     for(int i = 0; i < V ; i++){
         for(int j = 0; j < V;j++){
-            if(vCor[i] != vCor[j] && matrizadj[i][j] != 1){
+            if(vCor[i] != vCor[j] && matrizadj[i][j] != 1){ //confere se as cores sao iguais e se ja existe aresta entre os dois vertices
                 qArestas--;
-                conexao(i,j);
-                if(qArestas == 0){
-                    j = i = V;
+                conexao(i,j); // caso seja possivel fazer a ligacao entre as arestas
+                if(qArestas == 0){ // ja inseriu todas as arestas p , n ah mais oq inserir sair da repeticao
+                    i = j = V;
                 }
             }
         }
     }
-    if(qArestas == 0){
-        resp = true;
+    if(qArestas == 0){ //caso todas as arestas fossem inseridas corretamente
+        resp = true; 
     }
     return resp;
 }
@@ -129,30 +129,30 @@ int main(){
     cin >> qCasos;
 
     for(int i = 0;i < qCasos ; i++){
+
         int qVertices = 0, qArestas = 0, qCores = 0, qInserir = 0;
         cin >> qVertices; cin >> qArestas; cin >> qInserir; cin >> qCores;
         Grafo grafo(qVertices);
         for(int j = 0; j < qVertices ; j++){
             int cor = 0; 
             cin >> cor;
-            grafo.colocaCor(j,cor);
+            grafo.colocaCor(j,cor); //grava a cor de cada vertice em um vetor
         }
         for(int j = 0; j < qArestas ; j++){
             int v1 = 0 , v2 = 0;
             cin >> v1; cin >> v2;
-            grafo.conexao((v1-1),(v2-1));
+            grafo.conexao((v1-1),(v2-1)); //inseri as arestas no grafo
         }
         bool resp = false;
 
-        resp = grafo.inserirNovasArestas(qInserir);
+        resp = grafo.inserirNovasArestas(qInserir); //verifica se é possivel inserir as p arestas no grafo
         if(resp){
-            
-            resp = grafo.dfs(0);
+            resp = grafo.dfs(0); //chamando busca em profundidade para verificar se o grafo é conexo 
         }
 
-        grafo.zerarMatriz();
+        grafo.zerarMatriz(); //Zerando a matriz para o proximo grafo
 
-        printf("%s", resp ? "Y" : "N");
+        printf("%s\n", resp ? "Y" : "N"); //Imprimindo se é possivel ou n 
     }
 
     return 0;
