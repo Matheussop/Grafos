@@ -42,7 +42,6 @@ class Grafo{
 Grafo::Grafo(int v){
     this->V = v;
     vCor[V];
-    pi[V];
     criarMatriz(v);
 }
 
@@ -86,9 +85,7 @@ bool Grafo::dfs(int v){
     componetes = 0;
     for(int i  = 0 ; i < V ; i++){
         if(visitados[i] == 0){
-            iniciarVetor(pi,V);
             dfsvisit(i);
-            cout << endl;
             componetes = componetes + 1;
         }
     }
