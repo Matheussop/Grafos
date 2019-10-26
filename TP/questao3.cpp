@@ -4,11 +4,11 @@
 using namespace std;
 # define MAIOR __DBL_MAX__
     //Variaveis globais//
-    int matrizadj[100][100];
-    int matrizR[100][100];
+    int matrizadj[10000][10000];
+    int matrizR[10000][10000];
     int componetes = 0;
-    int visitados[100];
-    int pi[100];
+    int visitados[100000];
+    int pi[100000];
     queue<int> fila;
     //-----------------//
 
@@ -146,13 +146,7 @@ int main(){
         }
         grafo.Clargura(); //Chamar o vertice que fara a busca em largura no grafo.
         //grafo.mostrarMatriz();
-        cout << "----------------" << endl;
         //grafo.mostrarMatrizR();
-        if(resp(qVertices)){
-            cout <<"Bolada" <<endl; // se o grafo for bolado
-        }else {
-            cout <<"Nao Bolada" <<endl; // se o grafo for nao bolado
-        }
-        //printf("%sBolada\n", resp(qVertices) ? "" : "Nao ");
+        printf("%sBolada\n", resp(qVertices) ? "" : "Nao ");
     return 0;
 }
