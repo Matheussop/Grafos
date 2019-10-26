@@ -152,7 +152,7 @@ int main(){
 
         grafo.zerarMatriz(); //Zerando a matriz para o proximo grafo
 
-        printf("%s\n", resp ? "Y" : "N"); //Imprimindo se é possivel ou n 
+        printf("%s\n\n", resp ? "Y" : "N"); //Imprimindo se é possivel ou n 
     }
 
     return 0;
