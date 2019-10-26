@@ -2,16 +2,11 @@
 using namespace std;
 
     //Variaveis globais//
-    int matrizadj[100][100]; //Alocando a matriz com tamanho 100 100
+    int matrizadj[10000][10000]; //Alocando a matriz com tamanho 100 100
     int componetes = 0;      
-    int visitados[100]; //Vetor usado para ver qual vertice ja foi
-    int vCor[100];
+    int visitados[10000]; //Vetor usado para ver qual vertice ja foi
+    int vCor[10000];
     //-----------------//
-    
-void saida(int i){
-    cout << (char)(i+97) << ","; //Transformado os vertices em Letras 
-}
-
 class Grafo{
     public:
     //Variaveis da classe//
@@ -151,8 +146,7 @@ int main(){
         }
 
         grafo.zerarMatriz(); //Zerando a matriz para o proximo grafo
-
-        printf("%s\n\n", resp ? "Y" : "N"); //Imprimindo se é possivel ou n 
+        printf("%s\n", resp ? "Y" : "N"); //Imprimindo se é possivel ou n 
     }
 
     return 0;
