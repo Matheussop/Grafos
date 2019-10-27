@@ -26,7 +26,7 @@ class Grafo{
         }
 
         //Metodo para colocar um vertice no heap
-        void montaHeap(int *Q,int n){
+        void montaHeap(int *Q){
             for(int i = 0; i < V ; i++){
                 Q[i] = i;
             }
@@ -82,7 +82,6 @@ class Grafo{
         //vetor de distancias
         int dist[V];
         //vetor de visitados, para verificar se um vertice ja foi visitados
-        int visitados[V];
         int *Q = new int[V];
         //for para iniciar os vetores usados
         for (int i = 0; i < V ; i++){
@@ -90,7 +89,7 @@ class Grafo{
             pai[i] = -1;
         }
         //Inserir o elemento no heap
-        montaHeap(Q, V);
+        montaHeap(Q);
 
         int n = V;
         // iniciar o vetor de distancia .
